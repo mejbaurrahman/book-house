@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ProductRating from "../../components/ProductRating/productRating";
 import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 export default function BookDetail() {
   const [book, setBook] = useState([]);
@@ -51,9 +52,11 @@ export default function BookDetail() {
           <div className="">
             <button
               onClick={() =>
-                swal(
-                  `${book?.bookId} ${book?.bookName} has been successfully added to the Wishlist`
-                )
+                Swal.fire({
+                  title: "Good job!",
+                  text: `${book?.bookId} ${book?.bookName} has been successfully added to the Wishlist`,
+                  icon: "success",
+                })
               }
               className="btn btn-primary btn-outline"
             >
@@ -62,9 +65,11 @@ export default function BookDetail() {
 
             <button
               onClick={() =>
-                swal(
-                  `${book?.bookId} ${book?.bookName} has been successfully added to the Cart`
-                )
+                Swal.fire({
+                  title: "Good job!",
+                  text: `${book?.bookId} ${book?.bookName} has been successfully added to the Cart`,
+                  icon: "success",
+                })
               }
               className="btn btn-ghost btn-outline mx-2"
             >
