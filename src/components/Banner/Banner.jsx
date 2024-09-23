@@ -1,7 +1,7 @@
 import bannerPhoto from "../../assets/images/banner2.png";
 export default function Banner() {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero  min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src={bannerPhoto}
@@ -11,9 +11,7 @@ export default function Banner() {
           <h1 className="text-5xl font-bold">Unlock a World of Stories</h1>
           <p className="py-6">
             Find Your Next Favorite Book at{" "}
-            <span className="text-3xl  text-primary font-extralight">
-              Boi Ghor
-            </span>
+            <span className="text-3xl  font-extralight">Boi Ghor</span>
           </p>
           <button className="btn btn-primary">Buy Book</button>
         </div>

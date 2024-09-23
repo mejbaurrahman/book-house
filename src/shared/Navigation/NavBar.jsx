@@ -11,22 +11,22 @@ export default function NavBar() {
   const navBarItems = (
     <>
       <NavLink to="/" style={navButtonStyle}>
-        <button className="btn btn-outline border-none px-3 py-2 mx-2">
+        <button className="btn btn-outline border-none px-3 py-3 mx-2">
           Home
         </button>
       </NavLink>
       <NavLink to="/about" style={navButtonStyle}>
-        <button className="btn btn-outline border-none px-3 py-2 mx-2">
+        <button className="btn btn-outline border-none px-3 py-3 mx-2">
           About
         </button>
       </NavLink>
       <NavLink to="/blog" style={navButtonStyle}>
-        <button className="btn btn-outline border-none px-3 py-2 mx-2">
+        <button className="btn btn-outline border-none px-3 py-3 mx-2">
           Blog
         </button>
       </NavLink>
       <NavLink to="/faq" style={navButtonStyle}>
-        <button className="btn btn-outline border-none px-3 py-2 mx-2">
+        <button className="btn btn-outline border-none px-3 py-3 mx-2">
           Faq
         </button>
       </NavLink>
@@ -54,15 +54,15 @@ export default function NavBar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow"
           >
             {navBarItems}
           </ul>
         </div>
         <Link to="/" className="">
           <div className="flex justify-center items-center">
-            <IoBookOutline className="text-5xl font-extralight text-primary" />
-            <p className="text-3xl px-2">Boi Ghor</p>
+            <IoBookOutline className="lg:text-5xl md:text-3xl text-2xl font-extralight text-primary" />
+            <p className="lg:text-3xl text-xl px-2">Boi Ghor</p>
           </div>
         </Link>
       </div>
