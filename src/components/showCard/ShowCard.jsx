@@ -23,7 +23,7 @@ export default function ShowCard({ book }) {
         <ProductRating rating={rating}></ProductRating>
         <div className="card-actions justify-end">
           <Link to={`/bookDetails/${bookId}`}>
-            <button className="btn btn-primary">Book Details</button>
+            <button className="btn btn-ghost btn-outline">Book Details</button>
           </Link>
         </div>
       </div>

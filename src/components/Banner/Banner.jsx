@@ -13,7 +13,7 @@ export default function Banner() {
             Find Your Next Favorite Book at{" "}
             <span className="text-3xl  font-extralight">Boi Ghor</span>
           </p>
-          <button className="btn btn-primary">Buy Book</button>
+          <button className="btn btn-ghost btn-outline">Buy Book</button>
         </div>
       </div>
     </div>

@@ -55,7 +55,7 @@ export default function BookDetail() {
                   `${book?.bookId} ${book?.bookName} has been successfully added to the Wishlist`
                 )
               }
-              className="btn btn-primary"
+              className="btn btn-primary btn-outline"
             >
               Wish to Read
             </button>
@@ -66,7 +66,7 @@ export default function BookDetail() {
                   `${book?.bookId} ${book?.bookName} has been successfully added to the Cart`
                 )
               }
-              className="btn btn-primary mx-2"
+              className="btn btn-ghost btn-outline mx-2"
             >
               Add to Cart
             </button>
