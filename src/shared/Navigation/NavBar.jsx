@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { IoBookOutline } from "react-icons/io5";
 
 const navButtonStyle = ({ isActive, isTransitioning }) => {
   return {
@@ -58,7 +59,12 @@ export default function NavBar() {
             {navBarItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="">
+          <div className="flex justify-center items-center">
+            <IoBookOutline className="text-5xl font-extralight text-primary" />
+            <p className="text-3xl px-2">Boi Ghor</p>
+          </div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navBarItems}</ul>

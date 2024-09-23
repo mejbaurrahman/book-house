@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import ProductRating from "../ProductRating/productRating";
 
 /* eslint-disable react/prop-types */
 export default function ShowCard({ book }) {
-  const { image, tags, bookName, author, category, rating } = book;
+  const { image, tags, bookName, author, category, rating, bookId } = book;
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
       <figure>
@@ -21,7 +22,9 @@ export default function ShowCard({ book }) {
         <h6 className="mx-1">{category}</h6>
         <ProductRating rating={rating}></ProductRating>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Book Details</button>
+          <Link to={`/bookDetails/${bookId}`}>
+            <button className="btn btn-primary">Book Details</button>
+          </Link>
         </div>
       </div>
     </div>

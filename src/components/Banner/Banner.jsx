@@ -10,7 +10,10 @@ export default function Banner() {
         <div className="lg:p-2 md:p-2 p-5">
           <h1 className="text-5xl font-bold">Unlock a World of Stories</h1>
           <p className="py-6">
-            Find Your Next Favorite Book at Online Book Shop
+            Find Your Next Favorite Book at{" "}
+            <span className="text-3xl  text-primary font-extralight">
+              Boi Ghor
+            </span>
           </p>
           <button className="btn btn-primary">Buy Book</button>
         </div>
