@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
+import NavBar from "../shared/Navigation/NavBar";
 
 export default function Main() {
   return (
     <div>
-      <h1>The online Book Shop</h1>
+      <div className="container mx-auto px-7">
+        <NavBar />
+      </div>
       <Outlet />
     </div>
   );
