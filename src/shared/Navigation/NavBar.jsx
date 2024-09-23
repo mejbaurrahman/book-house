@@ -15,12 +15,12 @@ export default function NavBar() {
           Home
         </button>
       </NavLink>
-      <NavLink to="/about" style={navButtonStyle}>
+      <NavLink to="" style={navButtonStyle}>
         <button className="btn btn-outline border-none px-3 py-3 mx-2">
           About
         </button>
       </NavLink>
-      <NavLink to="/blog" style={navButtonStyle}>
+      <NavLink to="" style={navButtonStyle}>
         <button className="btn btn-outline border-none px-3 py-3 mx-2">
           Blog
         </button>
