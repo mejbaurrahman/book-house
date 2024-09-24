@@ -5,7 +5,7 @@ import Footer from "../shared/Footer/Footer";
 export default function Main() {
   return (
     <div>
-      <div className="container mx-auto px-7">
+      <div className="container mx-auto px-2">
         <NavBar />
       </div>
       <Outlet />

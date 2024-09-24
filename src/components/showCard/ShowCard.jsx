@@ -5,7 +5,7 @@ import ProductRating from "../ProductRating/productRating";
 export default function ShowCard({ book }) {
   const { image, tags, bookName, author, category, rating, bookId } = book;
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card bg-base-100 w-100 pl-0 pr-2 shadow-md">
       <figure>
         <img className="w-full h-52 p-3 rounded-md " src={image} alt="Shoes" />
       </figure>

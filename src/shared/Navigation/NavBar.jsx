@@ -70,8 +70,10 @@ export default function NavBar() {
         <ul className="menu menu-horizontal px-1">{navBarItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn mx-2">Buy Book</a>
-        <a className="btn mx-2">Sign In</a>
+        <div className="flex justify-end">
+          <a className="btn">Buy Book</a>
+          <a className="btn mx-2">Sign In</a>
+        </div>
       </div>
     </div>
   );
