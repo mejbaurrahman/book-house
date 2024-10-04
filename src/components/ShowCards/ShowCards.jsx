@@ -6,7 +6,7 @@ export default function ShowCards() {
   const [books, setBooks] = useState([]);
   useEffect(() => {
     axios
-      .get("books.json")
+      .get("http://localhost:5000/products")
       .then((res) => {
         setBooks(res.data);
       })
