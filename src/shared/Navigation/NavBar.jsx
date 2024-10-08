@@ -71,8 +71,12 @@ export default function NavBar() {
       </div>
       <div className="navbar-end">
         <div className="flex justify-end">
-          <a className="btn">Buy Book</a>
-          <a className="btn mx-2">Sign In</a>
+          <Link to="/login" className="btn">
+            Login
+          </Link>
+          <Link to="/register" className="btn mx-2">
+            Sign In
+          </Link>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import BookDetail from "../pages/BookDetail/BookDetail";
 import NotFound from "../pages/NotFound/NotFound";
 import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/Register",
+        element: <Register />,
       },
       {
         path: "/bookDetails/:bookId",
