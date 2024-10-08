@@ -4,6 +4,7 @@ import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const {
@@ -123,16 +124,16 @@ const Login = () => {
             <button
               onClick={handleGoogleLogin}
               type="submit"
-              className="btn btn-ghost btn-outline my-2"
+              className="btn btn-ghost text-xl btn-outline my-2 py-3 px-7"
             >
-              Login With Google
+              <FaGoogle />
             </button>
             <button
               onClick={handleGitHubLogin}
               type="submit"
-              className="btn btn-ghost btn-outline"
+              className="btn text-xl btn-ghost btn-outline my-2 py-3 px-7"
             >
-              Login With Github
+              <FaGithub />
             </button>
           </div>
         </div>

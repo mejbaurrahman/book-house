@@ -22,8 +22,8 @@ export default function ShowCard({ book }) {
         <h6 className="mx-1">{category}</h6>
         <ProductRating rating={rating}></ProductRating>
         <div className="card-actions justify-end">
-          <Link to={`/bookDetails/${bookId}`}>
-            <button className="btn btn-ghost btn-outline">Book Details</button>
+          <Link to={`/products/${bookId}`}>
+            <button className="btn btn-ghost btn-outline">View Details</button>
           </Link>
         </div>
       </div>

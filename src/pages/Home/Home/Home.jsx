@@ -2,7 +2,8 @@ import Banner from "../../../components/Banner/Banner";
 import HowItWorks from "../../../components/HowItWorks/HowItWorks";
 import ImageSection from "../../../components/ImageSection/ImageSection";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
-import ShowCards from "../../../components/ShowCards/ShowCards";
+
+import About from "../../About/About";
 import ContactUs from "../../ContactUs/ContactUs";
 
 export default function Home() {
@@ -15,8 +16,7 @@ export default function Home() {
         {/* <SectionHeading heading="Our Products"></SectionHeading> */}
         <ImageSection />
         <ContactUs />
-        <SectionHeading heading="Books Available"></SectionHeading>
-        <ShowCards></ShowCards>
+        <About />
       </div>
     </div>
   );

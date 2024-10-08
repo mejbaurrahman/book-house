@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home/Home";
 import Main from "../layouts/Main";
-import Faq from "../pages/Faq/Faq";
+
 import BookDetail from "../pages/BookDetail/BookDetail";
 import NotFound from "../pages/NotFound/NotFound";
-import About from "../pages/About/About";
-import Blog from "../pages/Blog/Blog";
+
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ShowCards from "../components/ShowCards/ShowCards";
 
 const router = createBrowserRouter([
   {
@@ -20,17 +20,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/faq",
-        element: <Faq />,
+        path: "/products",
+        element: (
+          <PrivateRoute>
+            <ShowCards />
+          </PrivateRoute>
+        ),
       },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/blog",
-        element: <Blog />,
-      },
+
       {
         path: "/login",
         element: <Login />,
@@ -40,7 +37,7 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/bookDetails/:bookId",
+        path: "/products/:bookId",
         element: (
           <PrivateRoute>
             <BookDetail />

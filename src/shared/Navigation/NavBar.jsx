@@ -28,19 +28,10 @@ export default function NavBar() {
           Home
         </button>
       </NavLink>
-      <NavLink to="/about" style={navButtonStyle}>
+
+      <NavLink to="/products" style={navButtonStyle}>
         <button className="btn btn-outline border-none px-3 py-3 mx-2">
-          About
-        </button>
-      </NavLink>
-      <NavLink to="/blog" style={navButtonStyle}>
-        <button className="btn btn-outline border-none px-3 py-3 mx-2">
-          Blog
-        </button>
-      </NavLink>
-      <NavLink to="/faq" style={navButtonStyle}>
-        <button className="btn btn-outline border-none px-3 py-3 mx-2">
-          Faq
+          Products
         </button>
       </NavLink>
     </>
