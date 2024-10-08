@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   updateProfile,
+  GithubAuthProvider,
 } from "firebase/auth";
 import { app } from "../../Firebase/Firebase.init";
 
@@ -19,6 +20,7 @@ export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   const googleProvider = new GoogleAuthProvider();
+  const gitHubProvider = new GithubAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -40,6 +42,10 @@ export default function AuthProvider({ children }) {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+  const gitHubLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, gitHubProvider);
+  };
   useEffect(() => {
     const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -55,6 +61,7 @@ export default function AuthProvider({ children }) {
     setLoading,
     loading,
     googleLogin,
+    gitHubLogin,
     login,
     logOut,
     updateUser,

@@ -1,16 +1,61 @@
+/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Login = () => {
   const {
     register,
-    handleSubmit,
     formState: { errors },
+    handleSubmit,
   } = useForm();
+  const { user, login, loading, setLoading, googleLogin, gitHubLogin } =
+    useContext(AuthContext);
+  const [errorShow, setErrorShow] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     console.log(data);
+    setErrorShow("");
+    login(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user)
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setErrorShow(error.message);
+        setLoading(false);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    setErrorShow("");
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setErrorShow(error.message);
+      });
+  };
+  const handleGitHubLogin = () => {
+    setErrorShow("");
+    gitHubLogin()
+      .then((result) => {
+        const user = result.user;
+
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setErrorShow(error.message);
+      });
   };
 
   return (
@@ -75,10 +120,18 @@ const Login = () => {
           </div>
           <div className="divider">OR</div>
           <div className="flex lg:justify-between md:justify-between lg:flex-row flex-col items-center">
-            <button type="submit" className="btn btn-ghost btn-outline my-2">
+            <button
+              onClick={handleGoogleLogin}
+              type="submit"
+              className="btn btn-ghost btn-outline my-2"
+            >
               Login With Google
             </button>
-            <button type="submit" className="btn btn-ghost btn-outline">
+            <button
+              onClick={handleGitHubLogin}
+              type="submit"
+              className="btn btn-ghost btn-outline"
+            >
               Login With Github
             </button>
           </div>

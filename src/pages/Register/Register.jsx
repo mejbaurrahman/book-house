@@ -3,8 +3,9 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 export default function SignUp() {
   const [errorShow, setErrorShow] = useState("");
@@ -13,79 +14,45 @@ export default function SignUp() {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  // const { createUser, user, setUser, loading, setLoading, updateUser } =
-  // useContext(AuthContext);
-  // const [createdEmail, setCreatedEmail] = useState("");
-  // const [token] = useToken(createdEmail);
-  // const navigate = useNavigate();
+  const { createUser, user, setUser, loading, setLoading, updateUser, logOut } =
+    useContext(AuthContext);
 
-  // if (token) {
-  //   navigate("/");
-  // }
+  const navigate = useNavigate();
+
   const handleSignUp = (data) => {
     console.log(data);
-    // setErrorShow("");
-    // createUser(data.email, data.password)
-    //   .then((result) => {
-    //     const user = result.user;
-    //     // console.log(user);
+    setErrorShow("");
+    createUser(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
 
-    //     setLoading(true);
-    //     const image = data.image[0];
-    //     const formData = new FormData();
-    //     formData.append("image", image);
-    //     fetch(
-    //       `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_img_bb_key}`,
-    //       {
-    //         method: "POST",
-    //         body: formData,
-    //       }
-    //     )
-    //       .then((res) => res.json())
-    //       .then((imageData) => {
-    //         if (imageData.success) {
-    //           const userInfo = {
-    //             displayName: data.name,
-    //             photoURL: imageData.data.url,
-    //           };
-    //           updateUser(userInfo)
-    //             .then((result) => {
-    //               // setUser(user);
-    //               saveUser(data.name, data.email, data.role);
-    //               setLoading(false);
-    //               // navigate('/');
-    //               toast.success(`Created a profile as ${data.role}`);
-    //               // console.log(user)
-    //             })
-    //             .catch((error) => {
-    //               setErrorShow(error.message);
-    //               setLoading(false);
-    //             });
-    //         }
-    //       });
-    //   })
-    //   .catch((error) => {
-    //     setErrorShow(error.message);
-    //     setLoading(false);
-    //   });
-  };
+        setLoading(true);
 
-  const saveUser = (name, email, role) => {
-    const user = { name, email, role };
-    fetch(`https://mobileshop-inky.vercel.app/users`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        // toast.success('Saved in database succesfully')
-        // setCreatedEmail(email);
+        const userInfo = {
+          displayName: data.name,
+          photoURL: data.photoUrl,
+        };
+        updateUser(userInfo)
+          .then((result) => {
+            setLoading(false);
+            // navigate('/');
+            toast.success(
+              `Created a profile! Please Login with Your credential`
+            );
+            // console.log(user)
+            logOut();
+            navigate("/");
+          })
+          .catch((error) => {
+            setErrorShow(error.message);
+            setLoading(false);
+          });
       })
-      .catch((error) => setErrorShow(error.message));
+      .catch((error) => {
+        setErrorShow(error.message);
+        setLoading(false);
+      });
   };
 
   return (

@@ -1,5 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoBookOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const navButtonStyle = ({ isActive, isTransitioning }) => {
   return {
@@ -8,6 +11,16 @@ const navButtonStyle = ({ isActive, isTransitioning }) => {
   };
 };
 export default function NavBar() {
+  const navigate = useNavigate();
+  const { user, loading, logOut } = useContext(AuthContext);
+  console.log(user);
+  const handleLogOut = () => {
+    return logOut()
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch();
+  };
   const navBarItems = (
     <>
       <NavLink to="/" style={navButtonStyle}>
@@ -71,12 +84,30 @@ export default function NavBar() {
       </div>
       <div className="navbar-end">
         <div className="flex justify-end">
-          <Link to="/login" className="btn">
-            Login
-          </Link>
-          <Link to="/register" className="btn mx-2">
-            Sign In
-          </Link>
+          {user?.uid ? (
+            <div className="flex justify-center items-center gap-2">
+              <img
+                className="lg:w-12 md:w-12 w-full rounded-full"
+                src={user?.photoURL}
+              />
+              <p>{user?.displayName}</p>
+              <button
+                onClick={handleLogOut}
+                className="btn btn-primary btn-outline"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+              <Link to="/register" className="btn mx-2">
+                Sign In
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
