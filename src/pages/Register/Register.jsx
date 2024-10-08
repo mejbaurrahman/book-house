@@ -37,11 +37,9 @@ export default function SignUp() {
           .then((result) => {
             setLoading(false);
             // navigate('/');
-            toast.success(
-              `Created a profile! Please Login with Your credential`
-            );
+            toast.success(`Created a profile!`);
             // console.log(user)
-            logOut();
+            // logOut();
             navigate("/");
           })
           .catch((error) => {

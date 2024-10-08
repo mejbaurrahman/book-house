@@ -74,7 +74,7 @@ export default function NavBar() {
         </div>
         <Link to="/" className="">
           <div className="flex justify-center items-center">
-            <IoBookOutline className="lg:text-5xl md:text-3xl text-2xl font-extralight text-primary" />
+            <IoBookOutline className="lg:text-5xl md:text-3xl text-2xl font-extralight text-black" />
             <p className="lg:text-3xl text-xl px-2">Boi Ghor</p>
           </div>
         </Link>
@@ -93,18 +93,15 @@ export default function NavBar() {
               <p>{user?.displayName}</p>
               <button
                 onClick={handleLogOut}
-                className="btn btn-primary btn-outline"
+                className="btn btn-black btn-outline"
               >
                 Logout
               </button>
             </div>
           ) : (
             <>
-              <Link to="/login" className="btn">
-                Login
-              </Link>
-              <Link to="/register" className="btn mx-2">
-                Sign In
+              <Link to="/login" className="btn btn-black btn-outline">
+                Login/Register
               </Link>
             </>
           )}

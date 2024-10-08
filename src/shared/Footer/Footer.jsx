@@ -1,13 +1,20 @@
+import { IoBookOutline } from "react-icons/io5";
+
 export default function Footer() {
   return (
     <footer className="footer text-base-content p-10">
-      <nav>
+      {/* <nav>
         <h6 className="footer-title">Services</h6>
         <a className="link link-hover">Branding</a>
         <a className="link link-hover">Design</a>
         <a className="link link-hover">Marketing</a>
         <a className="link link-hover">Advertisement</a>
-      </nav>
+      </nav> */}
+      <div className="flex flex-col justify-center items-center">
+        <IoBookOutline className="lg:text-3xl md:text-2xl text-xl font-extralight text-black" />
+        <h1 className="text-3xl uppercase font-semibold">BOI-GHOR</h1>
+        <p className="text-center">Collect Your Book To Train Your Brain</p>
+      </div>
       <nav>
         <h6 className="footer-title">Company</h6>
         <a className="link link-hover">About us</a>
