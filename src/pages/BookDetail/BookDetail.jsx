@@ -11,7 +11,7 @@ export default function BookDetail() {
   const params = useParams();
   console.log(params);
   useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch("https://book-shop-server-two.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         const specificBook = data?.find((b) => b?.bookId == params?.bookId);
